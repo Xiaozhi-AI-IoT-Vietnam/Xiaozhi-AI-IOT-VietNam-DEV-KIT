@@ -136,4 +136,13 @@ Press `Cmd+Shift+B` / `Ctrl+Shift+B`:
 
 ---
 
+## 👤 Author
+
+**Nguyễn Đức Hoài**
+
+- 🔗 GitHub: [nguyenduchoai](https://github.com/nguyenduchoai)
+- 🌐 Website: [xiaozhi-ai-iot.vn](https://xiaozhi-ai-iot.vn/)
+
+---
+
 **Made with ❤️ for ESP32 Developers**

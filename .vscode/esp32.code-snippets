@@ -1,0 +1,156 @@
+{
+    "ESP32 Log Info": {
+        "prefix": "logi",
+        "body": [
+            "ESP_LOGI(TAG, \"${1:message}\");"
+        ],
+        "description": "ESP32 Info log"
+    },
+    "ESP32 Log Warning": {
+        "prefix": "logw",
+        "body": [
+            "ESP_LOGW(TAG, \"${1:message}\");"
+        ],
+        "description": "ESP32 Warning log"
+    },
+    "ESP32 Log Error": {
+        "prefix": "loge",
+        "body": [
+            "ESP_LOGE(TAG, \"${1:message}: %s\", esp_err_to_name(${2:err}));"
+        ],
+        "description": "ESP32 Error log"
+    },
+    "ESP32 TAG": {
+        "prefix": "tag",
+        "body": [
+            "static const char *TAG = \"${1:ModuleName}\";"
+        ],
+        "description": "ESP32 TAG definition"
+    },
+    "ESP32 Error Check": {
+        "prefix": "errcheck",
+        "body": [
+            "esp_err_t ${1:err} = ${2:function}();",
+            "if (${1:err} != ESP_OK) {",
+            "    ESP_LOGE(TAG, \"${3:Error message}: %s\", esp_err_to_name(${1:err}));",
+            "    return ${1:err};",
+            "}"
+        ],
+        "description": "ESP32 error check pattern"
+    },
+    "PSRAM Malloc": {
+        "prefix": "psram",
+        "body": [
+            "void* ${1:buffer} = heap_caps_malloc(${2:size}, MALLOC_CAP_SPIRAM);",
+            "if (${1:buffer} == nullptr) {",
+            "    ESP_LOGE(TAG, \"Failed to allocate PSRAM\");",
+            "    return ESP_ERR_NO_MEM;",
+            "}"
+        ],
+        "description": "Allocate PSRAM buffer"
+    },
+    "PSRAM Free": {
+        "prefix": "psfree",
+        "body": [
+            "if (${1:buffer} != nullptr) {",
+            "    heap_caps_free(${1:buffer});",
+            "    ${1:buffer} = nullptr;",
+            "}"
+        ],
+        "description": "Free PSRAM buffer"
+    },
+    "Schedule UI Update": {
+        "prefix": "schedule",
+        "body": [
+            "Schedule([this]() {",
+            "    auto display = Board::GetInstance().GetDisplay();",
+            "    display->${1:SetChatMessage}(\"${2:role}\", ${3:message}.c_str());",
+            "});"
+        ],
+        "description": "Schedule UI update to main thread"
+    },
+    "Mutex Lock": {
+        "prefix": "lock",
+        "body": [
+            "std::lock_guard<std::mutex> lock(${1:mutex_});",
+            "${0}"
+        ],
+        "description": "Mutex lock guard"
+    },
+    "FreeRTOS Task": {
+        "prefix": "task",
+        "body": [
+            "static void ${1:task_name}(void* arg) {",
+            "    while (true) {",
+            "        ${0}",
+            "        vTaskDelay(pdMS_TO_TICKS(${2:100}));",
+            "    }",
+            "}",
+            "",
+            "// Create task",
+            "xTaskCreate(${1:task_name}, \"${1:task_name}\", ${3:4096}, nullptr, ${4:5}, nullptr);"
+        ],
+        "description": "FreeRTOS task template"
+    },
+    "State Check Idle": {
+        "prefix": "ifidle",
+        "body": [
+            "if (device_state_ != kDeviceStateIdle) {",
+            "    ESP_LOGW(TAG, \"Device not idle, current state: %d\", device_state_);",
+            "    return;",
+            "}"
+        ],
+        "description": "Check if device is idle"
+    },
+    "MQTT Message Handler": {
+        "prefix": "mqtthandler",
+        "body": [
+            "} else if (strcmp(type->valuestring, \"${1:message_type}\") == 0) {",
+            "    // Handle ${1:message_type}",
+            "    ${0}"
+        ],
+        "description": "MQTT message type handler"
+    },
+    "LVGL Label": {
+        "prefix": "lvlabel",
+        "body": [
+            "lv_obj_t* ${1:label} = lv_label_create(${2:parent});",
+            "lv_label_set_text(${1:label}, \"${3:text}\");",
+            "lv_obj_center(${1:label});"
+        ],
+        "description": "Create LVGL label"
+    },
+    "LVGL Style": {
+        "prefix": "lvstyle",
+        "body": [
+            "static lv_style_t ${1:style};",
+            "lv_style_init(&${1:style});",
+            "lv_style_set_bg_color(&${1:style}, lv_color_hex(0x${2:2196F3}));",
+            "lv_style_set_text_color(&${1:style}, lv_color_white());",
+            "lv_obj_add_style(${3:obj}, &${1:style}, 0);"
+        ],
+        "description": "Create LVGL style"
+    },
+    "cJSON Parse": {
+        "prefix": "jsonparse",
+        "body": [
+            "cJSON* ${1:item} = cJSON_GetObjectItem(${2:root}, \"${3:key}\");",
+            "if (cJSON_IsString(${1:item})) {",
+            "    const char* ${4:value} = ${1:item}->valuestring;",
+            "    ${0}",
+            "}"
+        ],
+        "description": "Parse JSON item"
+    },
+    "Callback Setup": {
+        "prefix": "callback",
+        "body": [
+            "${1:protocol_}->SetOn${2:Event}Callback([this](${3:const std::string& data}) {",
+            "    Schedule([this, ${4:data}]() {",
+            "        ${0}",
+            "    });",
+            "});"
+        ],
+        "description": "Setup async callback with Schedule"
+    }
+}

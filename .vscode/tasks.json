@@ -1,0 +1,99 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "ESP32: Build",
+			"type": "shell",
+			"command": ". $HOME/esp/esp-idf/export.sh && idf.py build",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": {
+				"owner": "cpp",
+				"fileLocation": [
+					"relative",
+					"${workspaceFolder}"
+				],
+				"pattern": {
+					"regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+					"file": 1,
+					"line": 2,
+					"column": 3,
+					"severity": 4,
+					"message": 5
+				}
+			},
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared"
+			}
+		},
+		{
+			"label": "ESP32: Flash",
+			"type": "shell",
+			"command": ". $HOME/esp/esp-idf/export.sh && idf.py -p /dev/cu.usbmodem* flash",
+			"group": "build",
+			"dependsOn": "ESP32: Build",
+			"presentation": {
+				"reveal": "always"
+			}
+		},
+		{
+			"label": "ESP32: Monitor",
+			"type": "shell",
+			"command": ". $HOME/esp/esp-idf/export.sh && idf.py -p /dev/cu.usbmodem* monitor",
+			"group": "test",
+			"presentation": {
+				"reveal": "always"
+			},
+			"isBackground": true
+		},
+		{
+			"label": "ESP32: Flash & Monitor",
+			"type": "shell",
+			"command": ". $HOME/esp/esp-idf/export.sh && idf.py -p /dev/cu.usbmodem* flash monitor",
+			"group": "test",
+			"presentation": {
+				"reveal": "always"
+			},
+			"isBackground": true
+		},
+		{
+			"label": "ESP32: Clean Build",
+			"type": "shell",
+			"command": ". $HOME/esp/esp-idf/export.sh && idf.py fullclean && idf.py build",
+			"group": "build",
+			"presentation": {
+				"reveal": "always"
+			}
+		},
+		{
+			"label": "ESP32: Menuconfig",
+			"type": "shell",
+			"command": ". $HOME/esp/esp-idf/export.sh && idf.py menuconfig",
+			"group": "build",
+			"presentation": {
+				"reveal": "always"
+			}
+		},
+		{
+			"label": "ESP32: Erase Flash",
+			"type": "shell",
+			"command": ". $HOME/esp/esp-idf/export.sh && idf.py -p /dev/cu.usbmodem* erase-flash",
+			"group": "build",
+			"presentation": {
+				"reveal": "always"
+			}
+		},
+		{
+			"label": "ESP32: Size Info",
+			"type": "shell",
+			"command": ". $HOME/esp/esp-idf/export.sh && idf.py size-components",
+			"group": "build",
+			"presentation": {
+				"reveal": "always"
+			}
+		}
+	]
+}

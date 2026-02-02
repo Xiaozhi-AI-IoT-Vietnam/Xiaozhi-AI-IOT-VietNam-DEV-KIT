@@ -21,7 +21,29 @@
 - 📟 **ESP32-S3** - Chip AI mạnh mẽ với PSRAM, hỗ trợ AI acceleration
 - 🚀 **ESP32-P4** - Thế hệ mới nhất, hiệu năng cao cho AI Edge
 
-### Dev Kit cung cấp:
+### 📦 Mã nguồn Xiaozhi ESP32 Vietnam
+
+Dev Kit này được tối ưu để phát triển dự án **Xiaozhi ESP32 Vietnam**:
+
+<p align="center">
+  <a href="https://github.com/Xiaozhi-AI-IoT-Vietnam/xiaozhi-esp32_vietnam">
+    <img src="https://img.shields.io/badge/🔗_Mã_nguồn_Xiaozhi-ESP32_Vietnam-orange?style=for-the-badge" alt="Source Code">
+  </a>
+</p>
+
+```
+📁 xiaozhi-esp32_vietnam/
+├── main/                 # Application code
+│   ├── application.cc    # State machine & core logic
+│   ├── audio/            # Audio processing (I2S, Opus, VAD)
+│   ├── display/          # LVGL UI components
+│   ├── protocols/        # MQTT, WebSocket
+│   └── boards/           # Board configurations
+├── components/           # ESP-IDF components
+└── sdkconfig            # Build configuration
+```
+
+### 🛠️ Dev Kit cung cấp:
 
 - 🧠 **AI-Powered Development**: Tích hợp sẵn với 5 công cụ AI hàng đầu (Antigravity, GitHub Copilot, Cursor, Windsurf, Cline)
 - 📚 **5 Skill chuyên biệt**: ESP32 Firmware, Audio Processing, LVGL Display, MQTT Protocol, **Xiaozhi Patterns**
@@ -188,9 +210,12 @@ Press `Cmd+Shift+B` / `Ctrl+Shift+B`:
 
 ## 🔗 References
 
-- [Original Xiaozhi](https://github.com/78/xiaozhi-esp32)
-- [ESP-IDF Docs](https://docs.espressif.com/projects/esp-idf/)
-- [LVGL 9.x](https://docs.lvgl.io/9.4/)
+| Link | Mô tả |
+|------|-------|
+| [**Xiaozhi ESP32 Vietnam**](https://github.com/Xiaozhi-AI-IoT-Vietnam/xiaozhi-esp32_vietnam) | 🇻🇳 Mã nguồn chính - Fork tối ưu cho Việt Nam |
+| [Original Xiaozhi](https://github.com/78/xiaozhi-esp32) | 🇨🇳 Dự án gốc từ tác giả 78 |
+| [ESP-IDF Docs](https://docs.espressif.com/projects/esp-idf/) | 📚 Tài liệu ESP-IDF chính thức |
+| [LVGL 9.x](https://docs.lvgl.io/9.4/) | 🎨 Thư viện giao diện LVGL |
 
 ---
 

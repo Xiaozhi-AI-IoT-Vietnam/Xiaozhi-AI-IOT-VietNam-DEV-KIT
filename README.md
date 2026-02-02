@@ -145,4 +145,4 @@ Press `Cmd+Shift+B` / `Ctrl+Shift+B`:
 
 ---
 
-**Made with ❤️ for ESP32 Developers**
+**Made with ❤️ for Xiaozhi AI IOT VietNam 🚀**

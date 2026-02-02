@@ -1,10 +1,12 @@
 # 🤖 Xiaozhi AI IOT VietNam - ESP32 Dev Kit
 
-> 🔧 Bộ công cụ phát triển firmware ESP32 tích hợp AI - Tăng tốc 10x hiệu suất lập trình
+> 🔧 Bộ công cụ phát triển firmware **ESP32-S3 / ESP32-P4** tích hợp AI - Tối ưu cho **Xiaozhi AI Voice Assistant**
 
 <p align="center">
-  <img src="https://img.shields.io/badge/ESP--IDF-5.x-blue?style=for-the-badge&logo=espressif" alt="ESP-IDF">
-  <img src="https://img.shields.io/badge/FreeRTOS-Enabled-green?style=for-the-badge" alt="FreeRTOS">
+  <img src="https://img.shields.io/badge/ESP32--S3-Supported-blue?style=for-the-badge&logo=espressif" alt="ESP32-S3">
+  <img src="https://img.shields.io/badge/ESP32--P4-Supported-blue?style=for-the-badge&logo=espressif" alt="ESP32-P4">
+  <img src="https://img.shields.io/badge/ESP--IDF-5.x-green?style=for-the-badge&logo=espressif" alt="ESP-IDF">
+  <img src="https://img.shields.io/badge/Xiaozhi-Optimized-orange?style=for-the-badge" alt="Xiaozhi">
   <img src="https://img.shields.io/badge/AI-Powered-purple?style=for-the-badge" alt="AI Powered">
   <img src="https://img.shields.io/badge/Made%20in-Vietnam-red?style=for-the-badge" alt="Made in Vietnam">
 </p>
@@ -13,12 +15,18 @@
 
 ## 🎯 Giới Thiệu
 
-**Xiaozhi AI IOT VietNam Dev Kit** là bộ công cụ phát triển firmware ESP32 được tối ưu hóa cho các dự án IoT và AI Voice Assistant. Dev Kit này cung cấp:
+**Xiaozhi AI IOT VietNam Dev Kit** là bộ công cụ phát triển firmware được thiết kế đặc biệt cho:
+
+- 🎙️ **Xiaozhi AI Voice Assistant** - Trợ lý giọng nói thông minh
+- 📟 **ESP32-S3** - Chip AI mạnh mẽ với PSRAM, hỗ trợ AI acceleration
+- 🚀 **ESP32-P4** - Thế hệ mới nhất, hiệu năng cao cho AI Edge
+
+### Dev Kit cung cấp:
 
 - 🧠 **AI-Powered Development**: Tích hợp sẵn với 5 công cụ AI hàng đầu (Antigravity, GitHub Copilot, Cursor, Windsurf, Cline)
-- 📚 **5 Skill chuyên biệt**: ESP32 Firmware, Audio Processing, LVGL Display, MQTT Protocol, Xiaozhi Patterns
+- 📚 **5 Skill chuyên biệt**: ESP32 Firmware, Audio Processing, LVGL Display, MQTT Protocol, **Xiaozhi Patterns**
 - 🔄 **7 Workflow chuẩn**: Từ lập kế hoạch `/plan` đến deploy `/git`
-- 💻 **16 Code Snippets**: Các pattern phổ biến cho ESP-IDF development
+- 💻 **16 Code Snippets**: Các pattern phổ biến cho Xiaozhi & ESP-IDF
 - ⚡ **One-click Install**: Cài đặt trong 30 giây với script tự động
 
 ---
